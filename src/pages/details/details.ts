@@ -24,7 +24,7 @@ export class DetailsPage {
   }
 
   public createOrder() {
-    this.ordersProdiver.createOrder().subscribe(saved => {
+    this.ordersProdiver.createOrder().subscribe(order => {
       var alert = this.alertCtrl.create({
         title: 'Order Created!',
         buttons: [

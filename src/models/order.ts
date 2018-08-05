@@ -9,18 +9,17 @@ export class Order {
     product: String;
     quantity: Number;
     package: String;
-    supplierId: String;
+    supplier: String;
     reciverId: String;
-    imageUrl: string;
     productObject: Product;
     /**
      *
      */
-    constructor(product: string, quantity: number, expirationDate: Date, pickupDate: Date) {
+
+    constructor(product: string = '', quantity: number = 0, expirationDate: Date = null, pickupDate: Date = null) {
         this.product = product;
         this.quantity = quantity;        
         this.expirationDate = expirationDate;
         this.pickupDate = pickupDate;
-        this.imageUrl = '../../assets/imgs/001-food.svg';
     }
 }
