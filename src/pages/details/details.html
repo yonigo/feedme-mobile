@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>פרטי האיסוף</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list >
+  
+      <ion-item>
+        <ion-label floating>משקל</ion-label>
+        <ion-input type="text" dir="rtl"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating left>תאריך קטיף</ion-label>
+        <ion-input type="date"  dir="rtl"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label left>סוג אריזה</ion-label>
+        <ion-select [(ngModel)]="package" dir="rtl"> 
+          <ion-option value="1">דולב</ion-option>
+          <ion-option value="2">אריזה</ion-option>
+          <ion-option value="3">ללא אריזה</ion-option>
+        </ion-select>   
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>תאריך איסוף</ion-label>
+        <ion-input type="date"  dir="rtl"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <button ion-button style="width:100%" large>שלח</button>
+  
+  </ion-content>
+  
