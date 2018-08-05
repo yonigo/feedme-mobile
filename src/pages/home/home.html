@@ -17,7 +17,7 @@
         <img src="{{order.imageUrl}}" alt="../../assets/imgs/004-avatar.svg">
       </ion-thumbnail>
       <h2>{{order.product}} - {{order.amount}}Kg</h2>      
-      <p *ngIf="order.pickupDate">{{order.pickupDate | date : short}}</p>
+      <p *ngIf="order.pickupDate">תאריך איסוף {{order.pickupDate | date : short}}</p>
       <p *ngIf="!order.pickupDate">מחכה לאישור</p>
       <button ion-button clear icon-only item-end>
         <ion-icon name="arrow-back" color="dark"></ion-icon>
