@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { OrdersProvider } from '../../providers/orders/orders';
 
 /**
  * Generated class for the DetailsPage page.
@@ -15,10 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, protected ordersProdiver: OrdersProvider, protected alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+  }
+
+  public createOrder() {
+    this.ordersProdiver.createOrder().subscribe(saved => {
+      var alert = this.alertCtrl.create({
+        title: 'Order Created!',
+        buttons: [
+          {
+            text: 'OK',
+            handler: data => {
+              this.navCtrl.setRoot('HomePage');
+            }
+          }
+        ]
+      });
+
+      alert.present();      
+    });
   }
 }

@@ -41,4 +41,11 @@ export class OrdersProvider {
       });
     });
   }
+
+  public createOrder(): Observable<boolean> {
+    return Observable.create(observable => {
+      observable.next(true);
+      observable.complete();
+    });
+  }  
 }
