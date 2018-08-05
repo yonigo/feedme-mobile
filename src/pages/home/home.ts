@@ -29,6 +29,6 @@ export class HomePage {
   }
 
   public addNewOrder(){
-    this.nav.setRoot('NewOrder');
+    this.nav.setRoot('NewOrderPage');
   }
 }
