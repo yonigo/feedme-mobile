@@ -14,7 +14,7 @@ import { ProductsProvider } from '../../providers/products/products';
 export class HomePage {
   orders: Array<Order>;
   user: User;
-  constructor(private nav: NavController, private auth: AuthServiceProvider, private ordersProvider: OrdersProvider, protected productsProvider: ProductsProvider) {
+  constructor(private nav: NavController, private auth: AuthServiceProvider, ordersProvider: OrdersProvider, protected productsProvider: ProductsProvider) {
     this.user = this.auth.getUserInfo();
 
     if (!this.user) {
