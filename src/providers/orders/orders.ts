@@ -23,12 +23,12 @@ export class OrdersProvider {
         let path = this.serverData.serverAddress + 'orders/supplier/' + userId;
 
         this.http.get<Array<Order>>(path).toPromise().then(orders => {
-          if (!orders.length) {
-            let order1 = new Order('5b66ff963cf846238c5ccb03', 30, new Date(new Date().getTime() + 60000), new Date());
-            let order2 = new Order('5b67005f3cf846238c5ccb04', 50, new Date(new Date().getTime() + 60000), new Date());
-            orders.push(order1);
-            orders.push(order2);
-          }
+          // if (!orders.length) {
+          //   let order1 = new Order('5b66ff963cf846238c5ccb03', 30, new Date(new Date().getTime() + 60000), new Date());
+          //   let order2 = new Order('5b67005f3cf846238c5ccb04', 50, new Date(new Date().getTime() + 60000), new Date());
+          //   orders.push(order1);
+          //   orders.push(order2);
+          // }
 
           orders.forEach(order => {
             order.productObject = products.find(product => product['_id'] === order.product);
@@ -47,7 +47,7 @@ export class OrdersProvider {
       let user = this.auth.getUserInfo();
 
       let order = new Order();
-      order.product = '5b6703133cf846238c5ccb05';
+      order.product = '5b66ff963cf846238c5ccb03';
       order.quantity = 100;
       order.expirationDate = new Date(new Date().getTime() + (60 * 60 * 1000));
       order.orderDate = new Date();
