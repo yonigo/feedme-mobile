@@ -13,7 +13,7 @@ export class Order {
     /**
      *
      */
-    constructor(product: string, quantity: number, expirationDate: Date, pickupDate: Date, imageUrl: string) {
+    constructor(product: string, quantity: number, expirationDate: Date, pickupDate: Date) {
         this.product = product;
         this.quantity = quantity;        
         this.expirationDate = expirationDate;
