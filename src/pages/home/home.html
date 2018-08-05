@@ -4,19 +4,19 @@
       התרומות שלי
     </ion-title>
     <ion-buttons end>
-        <button ion-button (click)="logout()">
-          <ion-icon name="log-out"></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list class="main-list">
     <ion-item *ngFor="let order of orders">
       <ion-thumbnail item-start>
-        <img src="{{order.imageUrl}}" alt="../../assets/imgs/004-avatar.svg">
+        <img src="{{order.imageUrl}}">
       </ion-thumbnail>
-      <h2>{{order.product}} - {{order.amount}}Kg</h2>      
+      <h2>{{order.product}} - {{order.quantity}}ק"ג</h2>
       <p *ngIf="order.pickupDate">תאריך איסוף {{order.pickupDate | date : short}}</p>
       <p *ngIf="!order.pickupDate">מחכה לאישור</p>
       <button ion-button clear icon-only item-end>
@@ -25,8 +25,8 @@
     </ion-item>
   </ion-list>
   <ion-fab bottom left>
-      <button ion-fab (click)="addNewOrder()" color="primary">
-        <ion-icon name="add"></ion-icon>
-      </button>
+    <button ion-fab (click)="addNewOrder()" color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
   </ion-fab>
 </ion-content>

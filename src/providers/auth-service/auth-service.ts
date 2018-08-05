@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models/user';
+import { ServerDataProvider } from '../server-data/server-data';
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -16,7 +17,7 @@ export class AuthServiceProvider {
   /**
    *
    */
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public serverData: ServerDataProvider) { }
 
   /**
    * login
@@ -27,8 +28,8 @@ export class AuthServiceProvider {
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let url = 'http://localhost:3000/users/login';
-        this.http.post<User>(url, credentials)
+        let path = this.serverData.serverAddress + 'users/login';
+        this.http.post<User>(path, credentials)
           .subscribe(user => {
             this.currentUser = user;
             observer.next(user != null);

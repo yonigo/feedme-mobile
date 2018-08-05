@@ -1,7 +1,23 @@
 export class Order {
+    type: String;
+    orderDate: Date;
+    pickupDate: Date;
+    expirationDate: Date;
+    status: String;
+    product: String;
+    quantity: Number;
+    package: String;
+    supplierId: String;
+    reciverId: String;
+    imageUrl: string;
     /**
      *
      */
-    constructor(public product: string, public amount: number, public imageUrl: string, public expiration: Date, public pickupDate: Date) {
+    constructor(product: string, quantity: number, expirationDate: Date, pickupDate: Date, imageUrl: string) {
+        this.product = product;
+        this.quantity = quantity;        
+        this.expirationDate = expirationDate;
+        this.pickupDate = pickupDate;
+        this.imageUrl = '../../assets/imgs/001-food.svg';
     }
 }

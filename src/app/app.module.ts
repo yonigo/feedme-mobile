@@ -8,6 +8,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpClientModule } from '@angular/common/http';
 import localeHe from '@angular/common/locales/he';
 import { registerLocaleData } from '@angular/common';
+import { OrdersProvider } from '../providers/orders/orders';
+import { ServerDataProvider } from '../providers/server-data/server-data';
 
 registerLocaleData(localeHe, 'he');
 
@@ -29,7 +31,9 @@ registerLocaleData(localeHe, 'he');
     SplashScreen,
     { provide: LOCALE_ID, useValue: 'he' },
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    OrdersProvider,
+    ServerDataProvider
   ]
 })
 export class AppModule {}
