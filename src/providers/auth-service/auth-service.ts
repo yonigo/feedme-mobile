@@ -14,19 +14,30 @@ export class AuthServiceProvider {
   currentUser: User;
 
   /**
+   *
+   */
+  constructor(public http: HttpClient) { }
+
+  /**
    * login
    */
   public login(credentials) {
-    if (credentials.email === null || credentials.password === null) {
+    if (credentials.username === null || credentials.password === null) {
       return Observable.throw("Please insert credentials");
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Tal Lev', 'tal.l@walkme.com');
-        observer.next(access);
-        observer.complete();
+        let url = 'http://localhost:3000/users/login';
+        this.http.post<User>(url, credentials)
+          .subscribe(user => {
+            this.currentUser = user;
+            observer.next(user != null);
+            observer.complete();
+          }, error => {
+            console.error(error);
+            observer.next(false);
+            observer.complete();
+          });
       });
     }
   }
