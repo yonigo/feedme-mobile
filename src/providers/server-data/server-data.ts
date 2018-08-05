@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -9,9 +8,9 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ServerDataProvider {
-  serverAddress: string;
+  public serverAddress: string;
 
-  constructor(public http: HttpClient) {
+  constructor() {
     this.serverAddress = 'http://localhost:3000/';
   }
 }

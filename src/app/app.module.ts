@@ -31,9 +31,9 @@ registerLocaleData(localeHe, 'he');
     SplashScreen,
     { provide: LOCALE_ID, useValue: 'he' },
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ServerDataProvider,
     AuthServiceProvider,
-    OrdersProvider,
-    ServerDataProvider
+    OrdersProvider
   ]
 })
 export class AppModule {}
