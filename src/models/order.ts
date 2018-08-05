@@ -1,3 +1,5 @@
+import { Product } from "./product";
+
 export class Order {
     type: String;
     orderDate: Date;
@@ -10,6 +12,7 @@ export class Order {
     supplierId: String;
     reciverId: String;
     imageUrl: string;
+    productObject: Product;
     /**
      *
      */

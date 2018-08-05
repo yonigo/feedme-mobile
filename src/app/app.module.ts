@@ -10,6 +10,7 @@ import localeHe from '@angular/common/locales/he';
 import { registerLocaleData } from '@angular/common';
 import { OrdersProvider } from '../providers/orders/orders';
 import { ServerDataProvider } from '../providers/server-data/server-data';
+import { ProductsProvider } from '../providers/products/products';
 
 registerLocaleData(localeHe, 'he');
 
@@ -32,6 +33,7 @@ registerLocaleData(localeHe, 'he');
     { provide: LOCALE_ID, useValue: 'he' },
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ServerDataProvider,
+    ProductsProvider,
     AuthServiceProvider,
     OrdersProvider
   ]

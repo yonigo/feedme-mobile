@@ -14,9 +14,9 @@
   <ion-list class="main-list">
     <ion-item *ngFor="let order of orders">
       <ion-thumbnail item-start>
-        <img src="{{order.imageUrl}}">
+        <img src="{{order.productObject.imageURL}}">
       </ion-thumbnail>
-      <h2>{{order.product}} - {{order.quantity}}ק"ג</h2>
+      <h2>{{order.productObject.name}} - {{order.quantity}}{{order.productObject.weightUnit}}</h2>
       <p *ngIf="order.pickupDate">תאריך איסוף {{order.pickupDate | date : short}}</p>
       <p *ngIf="!order.pickupDate">מחכה לאישור</p>
       <button ion-button clear icon-only item-end>
