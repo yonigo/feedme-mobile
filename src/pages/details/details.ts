@@ -26,7 +26,7 @@ export class DetailsPage {
   public createOrder() {
     this.ordersProdiver.createOrder().subscribe(order => {
       var alert = this.alertCtrl.create({
-        title: 'Order Created!',
+        title: 'ההזמנה בוצעה!',
         buttons: [
           {
             text: 'OK',
